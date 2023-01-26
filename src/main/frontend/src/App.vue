@@ -1,85 +1,78 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { RouterLink, RouterView } from "vue-router";
+import HeaderForAll from "./components/HeaderForAll.vue";
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+      <HeaderForAll class="headerGijon" msg="Gijón Events" />
     </div>
   </header>
+  <div id="app-structure">
+    <nav>
+      <RouterLink to="/" class="button">Home</RouterLink>
+      <RouterLink to="/request" class="button">Request list</RouterLink>
+      <RouterLink to="/form" class="button">Form</RouterLink>
+      <RouterLink to="/edit" class="button">Edit</RouterLink>
+    </nav>
 
-  <RouterView />
+    <RouterView />
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+<style lang="scss" scoped>
+@font-face {
+  font-family: Title;
+  src: url(../assets/Expletus_Sans.zip);
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+#app-structure {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: Title;
 
   nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
+    width: 15vh;
+    height: 40vh;
+    justify-content: flex-start;
+    background-color: rgb(229, 231, 217);
+    border-bottom: 1px solid;
+    border-radius: 15px;
+    border-color: #33206c;
+    border-style: solid;
+    border-width: 1px;
   }
-}
+
+  nav a.router-link-exact-active {
+    color: #ffffff;
+    padding: 0.2em;
+  }
+
+  nav a.router-link-exact-active:hover {
+    background-color: #55a06f;
+  }
+
+  nav a {
+    display: flex;
+    justify-content: space-around;
+    margin: 0.5em;
+    border-radius: 14px;
+    font-size: 1.2em;
+    background-color: #a08aee;
+    border-color: #33206c;
+    border-style: solid;
+    border-width: 1px;
+  }
+
+  @media (max-width: 768px) {
+    nav {
+      height: 10%;
+      margin-bottom: 1em;
+    }
+  }
+ }
+  
 </style>
