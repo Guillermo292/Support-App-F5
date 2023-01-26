@@ -1,9 +1,13 @@
 <script setup>
-import Form from '../components/RegistrationForm.vue';
+import  EventsItems from '../components/Events/EventsItems.vue'
+
+
 </script>
 
 <template>
   <main>
-    <Form></Form>
+    <EventsItems />
   </main>
 </template>
+
+

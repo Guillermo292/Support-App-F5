@@ -7,10 +7,10 @@
     <h1>Registration form</h1>
     <div id="form">
         <div id="inputs">
-        <input type="text" id="name" placeholder="Name">
-        <input type="text" id="date" placeholder="Date">
-        <input type="text" id="event" placeholder="Event">
-        <input type="text" id="descriptión" placeholder="Descriptión">
+        <input type="text" id="name" class="formText" placeholder="Name">
+        <input type="text" id="date" class="formText" placeholder="Date">
+        <input type="text" id="event" class="formText" placeholder="Event">
+        <input type="text" id="descriptión" class="formText" placeholder="Descriptión">
         </div>
         <div id="buttons">
             <button id="reset">Reset</button>
@@ -30,72 +30,62 @@
 #bigDiv{
     background-color: #E3D9E7;
     border-radius: 5%;
-    width: 50vw;
-    height: 90vh;
+    width: 28em;
+    height: 70%;
     display: flex;
-    flex-direction: column;
-    align-items: center; 
-    border-radius: 5%;
+   
+    justify-content: space-around;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1.5em;
+    margin-left: 2em;
+
+    flex-wrap: wrap;
+    justify-content: center;
 
  h1{
     color: #262528;
-    font-size: 5vw;
+    font-size: 2em;
     font-family: Title;
 
 }   
 
 #form{
     background-color: #fff;
-    width: 35vw;
-    height: 60vh;
+    width: 80%;
+    height: 20em;
     border-radius: 5%;
 
+    align-items: center;
+    flex-direction: column;
 
-#inputs{
-    // display: flex;
-    // align-content: center;
-    // justify-content: center;
-
- #name{
-    height: 3vw; 
-    width: 30vw;
-    background-color: #A08AEE;
-    border-radius: 50px;
     justify-content: center;
-    padding: 0em 0em 0em 1em;
-    border: none;
-    margin-top: 2em;
     
- }
- #date{
-    height: 3vw; 
-    width: 30vw;
+#inputs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+ .formText{
+    height: 3.2em; 
+    width: 19em;
     background-color: #A08AEE;
     border-radius: 50px;
     justify-content: center;
     padding: 0em 0em 0em 1em;
     border: none;
-    margin-top: 2em;
+    margin-top: 0.5em;  
  }
- #event{
-    height: 3vw; 
-    width: 30vw;
-    background-color: #A08AEE;
-    border-radius: 50px;
-    justify-content: center;
-    padding: 0em 0em 0em 1em;
-    border: none;
-    margin-top: 2em;
- }
+
  #descriptión{
-    height: 5vw; 
-    width: 30vw;
+    height: 2em; 
+    width: 19em;
     background-color: #A08AEE;
     border-radius: 50px;
     justify-content: center;
     padding: 0em 0em 0em 1em;
     border: none;
-    margin-top: 2em;
+    margin-top: 0.5em;
  }
  ::placeholder{ 
         color: #262528;
@@ -104,32 +94,39 @@
 }
 
 #buttons{
-
+align-items: baseline;
+justify-content: space-between;
+justify-content: space-around;
+align-content: inherit;
+padding: 1em;
 
 
 #reset{
     border-radius: 10vw;
     background-color: #A08AEE;
-    width: 5vw;
-    height: 3vw;
+    width: 85%;
+    height: 6%;
     margin-bottom: 0.5vh;
     font-size: 1vw; 
+    margin-left: 1vw;
 }
 #cancel{
     border-radius: 10vw;
     background-color: #A08AEE;
-    width: 5vw;
-    height: 3vw;
+    width: 85%;
+    height: 6%;
     margin-bottom: 0.5vh;
     font-size: 1vw; 
+    margin-left: 1vw;
 }
 #validate{
     border-radius: 10vw;
     background-color: #55A06F;
-    width: 5vw;
-    height: 3vw;
+    width: 85%;
+    height: 6%;
     margin-bottom: 0.5vh;
     font-size: 1vw; 
+    margin-left: 1vw;
 }
 }
 }
