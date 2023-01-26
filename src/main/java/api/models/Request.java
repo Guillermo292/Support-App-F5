@@ -139,4 +139,23 @@ public class Request {
 return request;
   }
 
+public RequestPayload delete(RequestPayload request) throws SQLException {
+    String sql_delete = "DELETE FROM request where id=1";
+    PreparedStatement preparedStatement = repository.conn.prepareStatement(sql_delete);
+    preparedStatement.clearParameters();
+    preparedStatement.executeUpdate();
+    preparedStatement.close();
+    Statement statement = repository.conn.createStatement();
+    String sql = String.format("SELECT * FROM %s ORDER BY date DESC", table);
+        ResultSet rs = statement.executeQuery(sql);
+        while (rs.next()) {
+            request.setId(rs.getInt("id"));
+            request.setName(rs.getString("name"));
+            request.setDate(rs.getDate("date"));
+            request.setEvent(rs.getString("event"));
+            request.setDescription(rs.getString("description"));
+        }
+    return request;
+}
+
 }

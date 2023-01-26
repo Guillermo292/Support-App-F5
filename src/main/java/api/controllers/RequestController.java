@@ -55,6 +55,23 @@ public class RequestController extends HttpServlet{
         }
 
     }
+    @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType("application/json;charset=utf-8");
+        PrintWriter out = resp.getWriter();
+        try {
+            Object request = requestService.storeDelete(req.getReader());
+            out.println(View.show(request));
+            resp.setStatus(HttpServletResponse.SC_ACCEPTED);
+
+        } catch (Exception e) {
+            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            System.out.println("Error deleted:" + e.getMessage());
+        }
+    } 
     }
+        
+    
+    
     
     

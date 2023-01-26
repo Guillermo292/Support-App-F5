@@ -36,4 +36,17 @@ public class RequestServices implements InterfaceService {
         }
 
     }
+
+    @Override
+    public Object storeDelete(BufferedReader reader) {
+        try {
+            RequestPayload requestPayload = gson.fromJson(reader, RequestPayload.class);
+            RequestPayload requestDeleted = request.delete(requestPayload);
+            return requestDeleted;
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+            return null;
+        }
+        
+    }
 }
